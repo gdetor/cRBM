@@ -38,7 +38,7 @@ void run_bars_stripes_training(int epochs)
     size_t i;
     int *idx = NULL;
 
-    size_t num_images = 32, len, im_size = 18;
+    size_t num_images = 32, len, im_size = 16;
     double **train_images = NULL, **test_images=NULL;
     double *err = NULL;
     double *label = NULL;
@@ -49,7 +49,7 @@ void run_bars_stripes_training(int epochs)
     rbm_t nn;
 
     /* Set the basic simulation parameters */
-    nn.num_visibles = 18;
+    nn.num_visibles = 16;
     nn.num_hiddens = 36;
     nn.eta = .1;
     nn.alpha = .0;
@@ -83,10 +83,9 @@ void run_bars_stripes_training(int epochs)
     idx = generate_batches(&nn, num_images, &rng);
 
     for(e = 0; e < epochs; ++e) {
-        /* Training */
+        /* Training in on-line fashion */
         int ii = (int) pcg32_boundedrand_r(&rng, num_images);
         memcpy(nn.V, train_images[ii], sizeof(double) * nn.num_visibles);
-        // rbm_batch(&nn, train_images, idx, &rng);
         rbm(&nn, &rng);
     }
 
