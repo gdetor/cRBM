@@ -1,4 +1,4 @@
-# rbm
+# cRBM
 
 This is a C implementation of a Restricted Bolzmann Machine [1]. In addition, we have implemented a Non-negative Matrix 
 Factorization algorithm based on the RBM implementation (see [2] for more details). 
