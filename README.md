@@ -1,11 +1,8 @@
 # cRBM
+rCHL is a C implementation of a Restricted Boltzmann Machine [1]. In addition, we have implemented a Non-negative Matrix Factorization algorithm based on the RBM implementation (see [2] for more details). 
+The current implementation uses the PCG random number generator [3] (http://www.pcg-random.org/)
 
-This is a C implementation of a Restricted Bolzmann Machine [1]. In addition, we have implemented a Non-negative Matrix 
-Factorization algorithm based on the RBM implementation (see [2] for more details). 
-
-In the current implementation we make use of the PCG random number generator [3]. And can be found here: http://www.pcg-random.org/
-
-This branch contains: 
+The repo is organized as follows: 
 ```
 ├── bin
 ├── data
